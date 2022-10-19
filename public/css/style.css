@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+
+ul {
+    list-style-type: none;
+}
+
+.title {
+    display: flex;
+}
+
+.button {
+    display: flex;
+}
