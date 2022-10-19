@@ -39,7 +39,7 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
-        return view('tasks.edit', ['task'=>$task]);
+        return view('tasks.edit', ['task' => $task]);
     }
 
     //editのフォームから編集対象の$idを受け取ることができる。
@@ -53,7 +53,6 @@ class TaskController extends Controller
 
         $task->save();
         return redirect('/tasks');
-        echo var_dump($task);
     }
 
     public function destroy($id)
@@ -63,6 +62,5 @@ class TaskController extends Controller
         $task->delete();
 
         return redirect('/tasks');
-
     }
 }

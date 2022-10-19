@@ -19,21 +19,18 @@
         <p>
             <label for="title">論文タイトル</label><br>
             <!-- valueってなに？これがcontrollerのrequestに代入している？-->
-            <input type="text" name="title" value="{{ $task->title }}">
+            <input type="text" name="title" value="{{ old('title' ,$task->title) }}">
         </p>
         <p>
             <label for="body">本文</label><br>
             <!-- なぜテキストエリアにはvalueがないのか？ -->
-            <textarea name="body" class="body">{{ $task->body }}</textarea>
+            <textarea name="body" class="body">{{ old('body',$task->body) }}</textarea>
         </p>
-        <div>
+        <div class="button">
             <input type="submit" value="更新">
-            <button onclick="location.href='/tasks'">詳細に戻る</button>
+            <button onclick="location.href='/tasks/{{ $task->id }}'" formmethod='get'>詳細に戻る</button>
         </div>
     </form>
-
-
-
 </body>
 
 </html>

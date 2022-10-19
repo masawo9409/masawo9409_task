@@ -31,6 +31,18 @@
     </ul>
     <hr>
     <h1>新規論文投稿</h1>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    <li>
+        {{ $error }}
+    </li>
+    @endforeach
+    @endif
+    <div>
+
+
+    </div>
+
     <form action="/tasks" method="POST">
         @csrf
         <p>

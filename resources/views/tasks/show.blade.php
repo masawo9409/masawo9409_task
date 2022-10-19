@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>task_show</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <p>{{ $task->title }}</p>
     <p>【内容】</p>
     <p>{!! nl2br(e($task->body)) !!}</p>
-    <div>
+    <div class="button">
         <button onclick="location.href='/tasks'">一覧へ戻る</button>
         <button onclick="location.href='/tasks/{{ $task->id }}/edit'">編集する</button>
         <form action="/tasks/{{ $task->id }}" method="post">
