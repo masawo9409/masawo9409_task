@@ -12,7 +12,6 @@
 <body>
     <h1>タスク一覧</h1>
     <ul>
-        @method('DELETE')
         @foreach ( $tasks as $task )
         <!-- $tasksの中から、$task[id]を順番に取り出している。 -->
         <li>
@@ -32,16 +31,12 @@
     <hr>
     <h1>新規論文投稿</h1>
     @if($errors->any())
-    @foreach($errors->all() as $error)
-    <li>
-        {{ $error }}
-    </li>
-    @endforeach
+        @foreach($errors->all() as $error)
+            <li>
+                {{ $error }}
+            </li>
+        @endforeach
     @endif
-    <div>
-
-
-    </div>
 
     <form action="/tasks" method="POST">
         @csrf
