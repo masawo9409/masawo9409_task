@@ -47,7 +47,7 @@ class TaskController extends Controller
     {
         //taskモデルクラスから編集対象のidをもつデータを取得し、$taskに入力。
         $task = Task::find($id);
-        //
+
         $task->title = $request->title;
         $task->body = $request->body;
 
